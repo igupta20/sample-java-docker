@@ -1,14 +1,12 @@
 pipeline {
-    agent any
+    agent { node { label 'default' } }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-                node {
-                    checkout scm
-                    sh 'docker build -t igupta20/sample-java-docker:latest .'
-                }
+                echo 'Building..'                   
+                checkout scm
+                sh 'docker build -t igupta20/sample-java-docker:latest .'
             }
         }
         stage('Test') {
