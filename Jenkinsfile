@@ -1,15 +1,21 @@
-node {
-  agent any
-  stage('Build'){
-    // build code
-  }
+pipeline {
+    agent any
 
-  post{
-    success {
-        echo 'Project build successfully!'
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
-    failure {
-        echo 'Project build failed!'
-    }
-  }  
 }
