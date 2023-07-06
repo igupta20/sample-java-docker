@@ -1,4 +1,4 @@
-#!/usr/bin/env groovy
+#!groovy
 pipeline {
     agent { node { label 'default' } }
 
@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo 'Building..'                   
                 checkout scm
-                //sh 'docker build -t igupta20/sample-java-docker:latest .'
+                sh 'docker build -t igupta20/sample-java-docker:latest .'
             }
         }
         stage('Test') {
