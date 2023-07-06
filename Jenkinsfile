@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo 'Building..'                   
                 checkout scm
-                bat 'docker build -t igupta20/sample-java-docker:latest .'
+                bat 'docker build -t ishaang059/sample-java-app:latest .'
             }
         }
         stage('Test') {
@@ -18,6 +18,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                bat 'docker push ishaang059/sample-java-app:latest'
+
             }
         }
     }
