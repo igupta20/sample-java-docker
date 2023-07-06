@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo 'Building..'                   
                 checkout scm
-                sudo sh 'docker build -t igupta20/sample-java-docker:latest .'
+                bat 'docker build -t igupta20/sample-java-docker:latest .'
             }
         }
         stage('Test') {
