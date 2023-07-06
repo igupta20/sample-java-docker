@@ -3,6 +3,9 @@ pipeline {
 
     stages {
         stage('Build') {
+            node {
+                checkout scm
+            }
             steps {
                 echo 'Building..'
                 sh 'docker build -t igupta20/sample-java-docker:latest .'
