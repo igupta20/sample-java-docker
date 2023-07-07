@@ -1,4 +1,5 @@
 #!groovy
+//jenkins script file
 pipeline {
     agent { node { label 'default' } }
 
